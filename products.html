@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore Models - RenderRealm</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #0f172a;
+    color: white;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: #020617;
+}
+
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: cyan;
+}
+
+/* TITLE */
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: #1e293b;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.price {
+    color: cyan;
+}
+
+button {
+    margin-top: 10px;
+    padding: 8px;
+    background: cyan;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h3>RenderRealm</h3>
+    <div>
+<a href="index.html">Home</a>
+<a href="explore.html">Explore</a>
+<a href="upload.html">Upload</a>
+<a href="profile.html">Profile</a>
+<a href="login.html">Login</a>
+      
+    </div>
+</nav>
+
+<h2>Explore 3D Models</h2>
+
+<!-- PRODUCTS -->
+<section class="grid">
+
+<div class="card">
+    <img src="https://via.placeholder.com/300">
+    <h3>Sports Car</h3>
+    <p class="price">₹700</p>
+    <button onclick="buy('Sports Car',700)">Buy</button>
+</div>
+
+<div class="card">
+    <img src="https://via.placeholder.com/300">
+    <h3>3D Character</h3>
+    <p class="price">₹900</p>
+    <button onclick="buy('Character',900)">Buy</button>
+</div>
+
+<div class="card">
+    <img src="https://via.placeholder.com/300">
+    <h3>House Model</h3>
+    <p class="price">₹1200</p>
+    <button onclick="buy('House',1200)">Buy</button>
+</div>
+
+</section>
+
+<script>
+function buy(name, price) {
+    let commission = price * 0.2;
+    let creator = price - commission;
+
+    alert(
+        "Model: " + name + "\n" +
+        "Price: ₹" + price + "\n" +
+        "Your Commission: ₹" + commission + "\n" +
+        "Creator Gets: ₹" + creator
+    );
+}
+</script>
+
+</body>
+</html>
